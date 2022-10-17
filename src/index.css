@@ -36,3 +36,66 @@ nav ul li {
   margin: 10px auto;
   border-radius: 10px;
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip-b {
+  position: relative;
+  border-bottom: 1px dotted black;
+}
+
+
+.tooltip-b .tooltiptext, 
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+.tooltip-b:hover .tooltiptext,
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.book-details {
+  position: relative;
+}
+
+.book-details-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-details-item-icon {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  font-weight: 900;
+  color: red;
+}
+
+.book-details-item-icon:hover {
+  color: lightcoral;
+}
+
+
+.tooltip-b {
+  position: relative;
+  border-bottom: 1px dotted black;
+}
