@@ -7,8 +7,6 @@ const BookList = () => {
 	const { isDarkTheme, light, dark } =
 		useThemeContextPresenter();
 	const { books } = useBookContextPresenter();
-	console.log('🚀 ~ books dsfaasdf', books);
-	console.log('🚀 ~ books.length', books.length);
 	const theme = isDarkTheme ? dark : light;
 	return books.length > 0 ? (
 		<div
@@ -27,7 +25,9 @@ const BookList = () => {
 			</ul>
 		</div>
 	) : (
-		<div>
+		<div
+			className='book-list'
+			style={{ background: theme.bg, color: theme.syntax }}>
 			No books to read. Try adding some or just enjoy your
 			free time :)
 		</div>

@@ -2,10 +2,15 @@ import React from 'react';
 import { useBookContextPresenter } from '../context/BookContextPresenter';
 
 const BookDetails = ({ book, key, theme }) => {
-	console.log('🚀 ~ theme', theme);
-	console.log('🚀 ~ key', key);
-	console.log('🚀 ~ book', book);
 	const { removeBook } = useBookContextPresenter();
+	const capitalize = (text) => {
+		return text.replace(/(^\w{1})|(\s+\w{1})/g, (letter) =>
+			letter.toUpperCase()
+		);
+	};
+	const title = capitalize(book.title);
+	const author = capitalize(book.author);
+
 	return (
 		<li
 			style={{ background: theme.ui }}
@@ -17,15 +22,15 @@ const BookDetails = ({ book, key, theme }) => {
 				onClick={() => removeBook(book.id)}>
 				X
 			</div>
-			<div className='book-details-item title'>
-				{book.title}
-			</div>
+			<h3 className='book-details-item title'>Title</h3>
+			<div className='book-details-item title'>{title}</div>
+			<h3 className='book-details-item author'>Author</h3>
 			<div className='book-details-item author'>
-				{book.author}
+				{author}
 			</div>
 			<span className='tooltiptext'>
-				Please click! Utilizing UI, state, and useContext no
-				API called
+				Click the X to remove a book. Using state and local
+				storage.
 			</span>
 		</li>
 	);

@@ -1,4 +1,19 @@
+*, html { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
 body {
+  /* height: 100vh;
+  width: 100vw; */
+  height: 100%;
+  width: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -7,30 +22,54 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  background: #941f1f;
+  height: 100%;
+  width: 100%;
+}
 /* app styles */
 .App {
-  max-width: 400px;
-  margin: 30px auto;
+  min-width: 300px;
+  max-width: 500px;
+  margin: 0 auto;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
+
+.navbar-title, 
+.navbar-auth {
+  margin: 10px 0;
+}
+
 nav{
   padding: 5px;
 }
+
 nav ul {
   padding: 0;
 }
+
 nav ul li {
   display: inline-block;
   margin: 0 10px;
 }
+
 .book-list {
   padding: 20px;
-  margin-bottom: 20px;
+  min-height: 80px;
+  max-height: 600px;
+  overflow-y: scroll;
 }
+
 .book-list ul{
   padding: 0;
   list-style-type: none;
 }
+
 .book-list li {
   padding: 10px;
   margin: 10px auto;
@@ -48,11 +87,10 @@ nav ul li {
   border-bottom: 1px dotted black;
 }
 
-
 .tooltip-b .tooltiptext, 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 250px;
   background-color: black;
   color: #fff;
   text-align: center;
@@ -75,16 +113,26 @@ nav ul li {
   position: relative;
 }
 
+.book-details:hover {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
 .book-details-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 5px 0;
+  width: 100%;
+  overflow-wrap: anywhere;
+  text-align: left;
 }
 
 .book-details-item-icon {
+  width: fit-content;
   position: absolute;
   right: 15px;
-  top: 10px;
+  top: 5px;
   cursor: pointer;
   font-weight: 900;
   color: red;
@@ -94,8 +142,42 @@ nav ul li {
   color: lightcoral;
 }
 
+form {
+  padding: 20px;
+}
 
-.tooltip-b {
-  position: relative;
-  border-bottom: 1px dotted black;
+input[type='text'] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 6px 0;
+  background: #ddd;
+  color: black;
+  border: 0;
+}
+
+input[type='submit'] {
+  margin: 10px auto;
+  background: #ddd;
+  border: 0;
+  padding: 6px 20px;
+  display: block;
+}
+
+.book-form-title {
+  text-decoration: underline;
+}
+
+.theme-toggle {
+  padding: 15px 0;
+}
+
+.theme-toggle-btn {
+  border-radius: 4px;
+  padding: 3px 5px;
+}
+
+.theme-toggle-btn:hover {
+  background: lightcoral;
+  border: 1px solid red;
 }

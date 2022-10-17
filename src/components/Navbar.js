@@ -10,9 +10,12 @@ const Navbar = () => {
 	const theme = isDarkTheme ? dark : light;
 	return (
 		<nav
+			className='navbar'
 			style={{ background: theme.ui, color: theme.syntax }}>
-			<h1>Context App</h1>
-			<h3 className='tooltip' onClick={toggleAuth}>
+			<h1 className='navbar-title'>Context App</h1>
+			<h3
+				className='navbar-auth tooltip'
+				onClick={toggleAuth}>
 				{!!isAuthenticated ? 'Logged In' : 'Logged Out'}
 				<span className='tooltiptext'>
 					Please click! Utilizing UI, state, and useContext
@@ -20,9 +23,24 @@ const Navbar = () => {
 				</span>
 			</h3>
 			<ul>
-				<li>Home</li>
-				<li>About</li>
-				<li>Contact</li>
+				<li className='tooltip'>
+					Home
+					<span className='tooltiptext'>
+						Currently Unset
+					</span>
+				</li>
+				<li className='tooltip'>
+					About
+					<span className='tooltiptext'>
+						Currently Unset
+					</span>
+				</li>
+				<li className='tooltip'>
+					Contact
+					<span className='tooltiptext'>
+						Currently Unset
+					</span>
+				</li>
 			</ul>
 		</nav>
 	);
