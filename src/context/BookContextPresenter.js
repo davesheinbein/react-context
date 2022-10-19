@@ -30,7 +30,6 @@ export function BookContextPresenter({ children }) {
 			id: 4,
 		},
 	]);
-	console.log('🚀 ~ books', books);
 	const addBook = (title, author) => {
 		setBooks([...books, { title, author, id: uuid() }]);
 	};
