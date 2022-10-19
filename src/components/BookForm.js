@@ -5,14 +5,16 @@ import { useThemeContextPresenter } from '../context/ThemeContextPresenter';
 const BookForm = () => {
 	const { isDarkTheme, light, dark } =
 		useThemeContextPresenter();
-	const { addBook } = useBookContextPresenter();
+	// const { addBook } = useBookContextPresenter();
+	const { dispatch } = useBookContextPresenter();
 	const theme = isDarkTheme ? dark : light;
 	const [title, setTitle] = useState('');
 	const [author, setAuthor] = useState('');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		addBook(title, author);
+		dispatch({ type: 'ADD_BOOK', book: { title, author } });
+		// addBook(title, author);
 		setTitle('');
 		setAuthor('');
 	};

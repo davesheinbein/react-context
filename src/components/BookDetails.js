@@ -2,7 +2,8 @@ import React from 'react';
 import { useBookContextPresenter } from '../context/BookContextPresenter';
 
 const BookDetails = ({ book, key, theme }) => {
-	const { removeBook } = useBookContextPresenter();
+	// const { removeBook } = useBookContextPresenter();
+	const { dispatch } = useBookContextPresenter();
 	const capitalize = (text) => {
 		return text.replace(/(^\w{1})|(\s+\w{1})/g, (letter) =>
 			letter.toUpperCase()
@@ -19,7 +20,12 @@ const BookDetails = ({ book, key, theme }) => {
 			className='book-details tooltip-b'>
 			<div
 				className='book-details-item book-details-item-icon'
-				onClick={() => removeBook(book.id)}>
+				onClick={() =>
+					dispatch({
+						type: 'REMOVE_BOOK',
+						id: book.id,
+					})
+				}>
 				X
 			</div>
 			<h3 className='book-details-item title'>Title</h3>
