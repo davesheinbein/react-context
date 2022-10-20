@@ -2,6 +2,7 @@ import React from 'react';
 import { useBookContextPresenter } from '../context/BookContextPresenter';
 import { useThemeContextPresenter } from '../context/ThemeContextPresenter';
 import BookDetails from './BookDetails';
+import { v1 as uuid } from 'uuid';
 
 const BookList = () => {
 	const { isDarkTheme, light, dark } =
@@ -17,7 +18,7 @@ const BookList = () => {
 					return (
 						<BookDetails
 							book={book}
-							key={book.id}
+							key={book.id + uuid()}
 							theme={theme}
 						/>
 					);

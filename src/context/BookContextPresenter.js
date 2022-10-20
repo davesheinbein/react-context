@@ -1,8 +1,8 @@
 import React, {
 	createContext,
 	useContext,
+	useEffect,
 	useReducer,
-	useState,
 } from 'react';
 import { v1 as uuid } from 'uuid';
 import { bookContextModelReducer } from '../model/BookContextModelReducer';
@@ -12,8 +12,17 @@ const BookContext = createContext();
 export function BookContextPresenter({ children }) {
 	const [books, dispatch] = useReducer(
 		bookContextModelReducer,
-		[]
+		[],
+		() => {
+			const localData = localStorage.getItem('books');
+			return localData ? JSON.parse(localData) : [];
+		}
 	);
+
+	useEffect(() => {
+		localStorage.setItem('books', JSON.stringify(books));
+	}, [books]);
+
 	// const [books, setBooks] = useState([
 	// 	{
 	// 		title: 'name of the wind',
