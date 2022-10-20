@@ -29,8 +29,15 @@ const BookList = () => {
 		<div
 			className='book-list'
 			style={{ background: theme.bg, color: theme.syntax }}>
-			No books to read. Try adding some or just enjoy your
-			free time :)
+			<div className='book-list-empty'>
+				<div className='book-list-empty-text'>
+					<p>No books to read.</p>
+					<p>
+						Try adding some or just enjoy your free time
+					</p>
+					<p>😊</p>
+				</div>
+			</div>
 		</div>
 	);
 };
