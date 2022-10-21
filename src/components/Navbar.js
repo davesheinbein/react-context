@@ -12,7 +12,10 @@ const Navbar = () => {
 		<nav
 			className='navbar'
 			style={{ background: theme.ui, color: theme.syntax }}>
-			<h1 className='navbar-title'>Context App</h1>
+			<h1 className='navbar-title'>
+				-- useContext Application --
+				<br />- Books To Be Read -
+			</h1>
 			<h3
 				className='navbar-auth tooltip'
 				onClick={toggleAuth}>

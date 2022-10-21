@@ -42,7 +42,11 @@ body {
 
 .navbar-title, 
 .navbar-auth {
-  margin: 10px 0;
+  margin: 10px 0 20px;
+}
+
+.navbar > ul {
+  padding: 10px 0;
 }
 
 nav{
